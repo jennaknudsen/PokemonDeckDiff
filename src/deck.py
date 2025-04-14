@@ -142,29 +142,29 @@ class Deck:
         energy = dict()
         for card, item in self.get_pokemon().items():
             if card in other.get_pokemon():
-                pokemon[card] = item - other.get_pokemon()[card]
+                pokemon[card] = -(item - other.get_pokemon()[card])
             else:
-                pokemon[card] = item
+                pokemon[card] = -item
         for card, item in self.get_trainers().items():
             if card in other.get_trainers():
-                trainer[card] = item - other.get_trainers()[card]
+                trainer[card] = -(item - other.get_trainers()[card])
             else:
-                trainer[card] = item
+                trainer[card] = -item
         for card, item in self.get_energy().items():
             if card in other.get_energy():
-                energy[card] = item - other.get_energy()[card]
+                energy[card] = -(item - other.get_energy()[card])
             else:
-                energy[card] = item
+                energy[card] = -item
 
         for card, item in other.get_pokemon().items():
             if card not in self.get_pokemon():
-                pokemon[card] = -item
+                pokemon[card] = item
         for card, item in other.get_trainers().items():
             if card not in self.get_trainers():
-                trainer[card] = -item
+                trainer[card] = item
         for card, item in other.get_energy().items():
             if card not in self.get_energy():
-                energy[card] = -item
+                energy[card] = item
                 
         result = {
             'Pokémon': pokemon,
@@ -174,7 +174,7 @@ class Deck:
         return result
     
     def diff(self, other):
-        diff_1 = other - self
+        diff_1 = self - other
         output = []
         output.append(colored(f'-{self.get_name()}', 'red'))
         output.append(colored(f'+{other.get_name()}', 'green'))

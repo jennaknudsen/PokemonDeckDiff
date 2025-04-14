@@ -43,6 +43,9 @@ class PokemonCard:
     def __str__(self):
         return f'{self.get_name()} {self.get_set()} {self.get_set_num()}'
     
+    def __lt__(self, other):
+        return self == other and self.get_set_num() < other.get_set_num()
+    
     def __repr__(self):
         return str(self)
     
