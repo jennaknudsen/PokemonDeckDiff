@@ -70,6 +70,8 @@ To run the program, open a terminal window and run `python3 <path to src/deck_di
 This example demonstrates the program being run with the decks used by Tanner Hurley (3rd place) and Andrew Hedrick (2nd place) at the Atlanta Regional 2025. Both decks are variants on Dragapult ex. 
 This output shows what needs to change from Tanner Hurley's deck to get to Andrew Hedrick's deck. 
 
+GitHub's Markdown parser does not support custom text colors. The real output highlights all removals in red and all additions in green, but that unfortunately cannot be shown here.
+
 $ python3 src/deck_diff.py examples/hurley-atlanta.deck examples/hedrick-atlanta.deck \
 <span style="color:red">-hurley-atlanta.deck</span>\
 <span style="color:green">+hedrick-atlanta.deck</span>
