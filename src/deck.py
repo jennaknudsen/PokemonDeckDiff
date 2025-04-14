@@ -143,31 +143,31 @@ class Deck:
         pokemon = dict()
         trainer = dict()
         energy = dict()
-        for card, item in self.get_pokemon().items():
+        for card, count in self.get_pokemon().items():
             if card in other.get_pokemon():
-                pokemon[card] = -(item - other.get_pokemon()[card])
+                pokemon[card] = -(count - other.get_pokemon()[card])
             else:
-                pokemon[card] = -item
-        for card, item in self.get_trainers().items():
+                pokemon[card] = -count
+        for card, count in self.get_trainers().items():
             if card in other.get_trainers():
-                trainer[card] = -(item - other.get_trainers()[card])
+                trainer[card] = -(count - other.get_trainers()[card])
             else:
-                trainer[card] = -item
-        for card, item in self.get_energy().items():
+                trainer[card] = -count
+        for card, count in self.get_energy().items():
             if card in other.get_energy():
-                energy[card] = -(item - other.get_energy()[card])
+                energy[card] = -(count - other.get_energy()[card])
             else:
-                energy[card] = -item
+                energy[card] = -count
 
-        for card, item in other.get_pokemon().items():
+        for card, count in other.get_pokemon().items():
             if card not in self.get_pokemon():
-                pokemon[card] = item
-        for card, item in other.get_trainers().items():
+                pokemon[card] = count
+        for card, count in other.get_trainers().items():
             if card not in self.get_trainers():
-                trainer[card] = item
-        for card, item in other.get_energy().items():
+                trainer[card] = count
+        for card, count in other.get_energy().items():
             if card not in self.get_energy():
-                energy[card] = item
+                energy[card] = count
                 
         result = {
             'Pokémon': pokemon,
