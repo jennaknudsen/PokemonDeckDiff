@@ -71,51 +71,51 @@ This example demonstrates the program being run with the decks used by Tanner Hu
 This output shows what needs to change from Tanner Hurley's deck to get to Andrew Hedrick's deck. 
 
 $ python3 src/deck_diff.py examples/hurley-atlanta.deck examples/hedrick-atlanta.deck \
-<font color='red'>-hurley-atlanta.deck</font>\
-<font color='green'>+hedrick-atlanta.deck</font>
+<span style="color:red">-hurley-atlanta.deck</span>\
+<span style="color:green">+hedrick-atlanta.deck</span>
 
-Pokémon: <font color='red'>-2</font> <font color='green'>+6</font>\
-<font color='red'>-1 Munkidori TWM 95\
--1 Genesect SFA 40</font>\
-<font color='green'>+1 Dragapult ex TWM 130\
+Pokémon: <span style="color:red">-2</span> <span style="color:green">+6</span>\
+<span style="color:red">-1 Munkidori TWM 95\
+-1 Genesect SFA 40</span>\
+<span style="color:green">+1 Dragapult ex TWM 130\
 +2 Duskull PRE 35\
 +2 Dusclops PRE 36\
-+1 Dusknoir PRE 37</font>
++1 Dusknoir PRE 37</span>
 
-Trainer: <font color='red'>-9</font> +6\
-<font color='red'>-2 Arven OBF 186\
+Trainer: <span style="color:red">-9</span> +6\
+<span style="color:red">-2 Arven OBF 186\
 -1 Nest Ball SVI 181\
 -1 Energy Search SVI 172\
 -1 Bravery Charm PAL 173\
 -1 Defiance Band SVI 169\
 -1 Exp. Share SVI 174\
--2 Artazon PAL 171</font>\
-<font color='green'>+2 Jacq SVI 175\
+-2 Artazon PAL 171</span>\
+<span style="color:green">+2 Jacq SVI 175\
 +1 Night Stretcher SFA 61\
 +1 Earthen Vessel PAR 163\
 +1 Rare Candy SVI 191\
-+1 Luxurious Cape PAR 166 </font>
++1 Luxurious Cape PAR 166 </span>
 
-Energy: <font color='red'>-3</font> <font color='green'>+2</font>\
-<font color='red'>-3 Luminous Energy PAL 191</font>\
-<font color='green'>+1 Psychic Energy SVE 13\
-+1 Fire Energy SVE 10</font>
+Energy: <span style="color:red">-3</span> <span style="color:green">+2</span>\
+<span style="color:red">-3 Luminous Energy PAL 191</span>\
+<span style="color:green">+1 Psychic Energy SVE 13\
++1 Fire Energy SVE 10</span>
 
 Total Difference: 14 Cards
 
 ## Output Format
 The output begins by indicating which deck we are removing cards from and which deck we are adding cards from with the lines:\
-<font color='red'>-deck_1</font>\
-<font color='green'>+deck_2</font>
+<span style="color:red">-deck_1</span>\
+<span style="color:green">+deck_2</span>
 
 Then, there is a short snippet of how many cards are removed from a category, followed by how many are added. For example:\
-Pokémon: <font color='red'>-2</font> <font color='green'>+6</font>\
+Pokémon: <span style="color:red">-2</span> <span style="color:green">+6</span>\
 This indicates that 2 Pokémon cards are removed from deck 1, and 6 are added from deck 2.\
 The Trainer and Energy categories get the same summary on their heading.
 
 This is followed by a summary of the quantities of each individual card removed, and then the same for each individual card added:\
-<font color='red'>-1 Munkidori TWM 95</font>\
-<font color='green'>+1 Dragapult ex TWM 130</font>\
+<span style="color:red">-1 Munkidori TWM 95</span>\
+<span style="color:green">+1 Dragapult ex TWM 130</span>\
 This indicates that 1 Munkidori from the Twilight Masquerade (TWM) set is removed, and 1 Dragapult ex from the TWM set is added.\
 The Trainer and Energy sections also get the same summary of each card difference for their section.
 
