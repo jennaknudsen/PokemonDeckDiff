@@ -5,7 +5,7 @@ from termcolor import colored
 
 SOURCE = re.compile(r'(Source): (https://.+)')
 CATEGORY = re.compile(r'(.+): ([\d]+)')
-CARD = re.compile(r'([\d]+) ([A-Z][a-zA-Z\' é]+) ([A-Z]{3}) ([\d]+)')
+CARD = re.compile(r'([\d]+) ([\S\s]+) ([A-Z]{3}) ([\d]+)')
 
 class Deck:
     def __init__(self, deck_file):
@@ -30,7 +30,7 @@ class Deck:
                 self.__source = source.group(2)
             elif CATEGORY.match(line.strip()):
                 if category_count != 0:
-                    raise Warning(f'Number of cards in {curr_section} section is off by {category_count}')
+                    raise Warning(f'Number of cards in {curr_section} section is off by {category_count} in {self.get_name()}')
                 category = CATEGORY.match(line.strip())
                 curr_section = category.group(1)
                 category_count = int(category.group(2))
@@ -64,7 +64,7 @@ class Deck:
         if total_cards != 60:
             raise Warning(f'There are {total_cards} cards in the deck {self.get_name()}!')
         if self.__num_pokemon == 0:
-            raise Warning('There are no Pokémon in the deck!')
+            raise Warning(f'There are no Pokémon in the deck! {self.get_name()}')
 
     def get_name(self):
         return self.__name
@@ -177,7 +177,7 @@ class Deck:
         diff_1 = other - self
         output = []
         output.append(colored(f'-{self.get_name()}', 'red'))
-        output.append(colored(f'+{self.get_name()}', 'green'))
+        output.append(colored(f'+{other.get_name()}', 'green'))
         output.append('')
         total_diff = 0
         for category_name, cards in diff_1.items():
