@@ -137,6 +137,9 @@ class Deck:
         return result
 
     def __sub__(self, other):
+        '''
+        Returns the changes necessary to get from this deck to the other deck
+        '''
         pokemon = dict()
         trainer = dict()
         energy = dict()
